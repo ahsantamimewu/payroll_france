@@ -1,0 +1,251 @@
+[
+  {
+    "id": "rule-btp-stdhours-v1",
+    "description": "Standard weekly hours definition for BTP sector.",
+    "condition": "true",
+    "action": {
+      "type": "set_standard_hours",
+      "parameters": {
+        "standard_hours": 35
+      }
+    },
+    "source": {
+      "name": "Code du Travail",
+      "article": "L3121-27",
+      "link": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033020760"
+    },
+    "sector": "BTP",
+    "version": "1.0",
+    "last_updated": "2024-05-15"
+  },
+  {
+    "id": "rule-btp-overtime25-v1",
+    "description": "Overtime pay at +25% for hours worked between 36 and 43 hours.",
+    "condition": "input.hours_worked > 35 && input.hours_worked <= 43",
+    "action": {
+      "type": "calculate_overtime",
+      "parameters": {
+        "rate": 0.25,
+        "base_hours_threshold": 35,
+        "upper_hours_limit": 43,
+        "hourly_rate_variable": "employee.hourly_rate"
+      }
+    },
+    "source": {
+      "name": "Code du Travail",
+      "article": "L3121-28",
+      "link": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033020754"
+    },
+    "sector": "BTP",
+    "version": "1.0",
+    "last_updated": "2024-05-15"
+  },
+  {
+    "id": "rule-btp-overtime50-v1",
+    "description": "Overtime pay at +50% for hours worked beyond 43 hours.",
+    "condition": "input.hours_worked > 43",
+    "action": {
+      "type": "calculate_overtime",
+      "parameters": {
+        "rate": 0.50,
+        "base_hours_threshold": 43,
+        "hourly_rate_variable": "employee.hourly_rate"
+      }
+    },
+    "source": {
+      "name": "Code du Travail",
+      "article": "L3121-28",
+      "link": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033020754"
+    },
+    "sector": "BTP",
+    "version": "1.0",
+    "last_updated": "2024-05-15"
+  },
+  {
+    "id": "rule-btp-mealallowance-v1",
+    "description": "Meal allowance (panier repas) for BTP workers.",
+    "condition": "input.meal_allowances > 0",
+    "action": {
+      "type": "add_fixed_allowance",
+      "parameters": {
+        "amount_per_unit": 9.50,
+        "units": "input.meal_allowances",
+        "allowance_name": "Indemnité de repas (Panier)"
+      }
+    },
+    "source": {
+      "name": "CCN BTP",
+      "article": "Article 8.18",
+      "link": "https://www.legifrance.gouv.fr/conv_coll/id/KALICONT000005635222/"
+    },
+    "sector": "BTP",
+    "version": "1.0",
+    "last_updated": "2024-05-15"
+  },
+  {
+    "id": "rule-btp-travelallowance-zoneA-v1",
+    "description": "Travel allowance (indemnité de trajet) for Zone A.",
+    "condition": "input.travel_zone === 'A' && employee.category === 'ouvrier'",
+    "action": {
+      "type": "add_fixed_allowance",
+      "parameters": {
+        "amount_per_day": 2.70,
+        "units": "input.days_worked_with_travel",
+        "allowance_name": "Indemnité de trajet Zone A"
+      }
+    },
+    "source": {
+      "name": "CCN BTP",
+      "article": "Article 8.11",
+      "link": "https://www.legifrance.gouv.fr/conv_coll/id/KALICONT000005635222/"
+    },
+    "sector": "BTP",
+    "version": "1.0",
+    "last_updated": "2024-05-15"
+  },
+  {
+    "id": "rule-btp-toolallowance-v1",
+    "description": "Tool allowance (prime d'outillage) for workers providing their own tools.",
+    "condition": "input.tool_allowance_eligible === true",
+    "action": {
+      "type": "add_fixed_allowance",
+      "parameters": {
+        "amount_monthly": 20.00,
+        "allowance_name": "Prime d'outillage"
+      }
+    },
+    "source": {
+      "name": "CCN BTP",
+      "article": "Accord régional X",
+      "link": "https://www.legifrance.gouv.fr/conv_coll/id/KALICONT000005635222/"
+    },
+    "sector": "BTP",
+    "version": "1.0",
+    "last_updated": "2024-05-15"
+  },
+  {
+    "id": "rule-btp-chantierbonus-v1",
+    "description": "Specific construction site bonus (prime de chantier).",
+    "condition": "input.chantier_bonus_amount > 0",
+    "action": {
+      "type": "add_custom_bonus",
+      "parameters": {
+        "amount": "input.chantier_bonus_amount",
+        "bonus_name": "Prime de chantier exceptionnelle"
+      }
+    },
+    "source": {
+      "name": "Accord d'entreprise / Contrat de travail",
+      "article": "N/A",
+      "link": "N/A"
+    },
+    "sector": "BTP",
+    "version": "1.0",
+    "last_updated": "2024-05-15"
+  },
+  {
+    "id": "rule-btp-publicholiday-worked-v1",
+    "description": "Payment for working on a public holiday.",
+    "condition": "input.worked_public_holiday === true",
+    "action": {
+      "type": "calculate_holiday_pay",
+      "parameters": {
+        "rate_multiplier": 2.0,
+        "hours_worked_holiday": "input.hours_on_holiday",
+        "hourly_rate_variable": "employee.hourly_rate"
+      }
+    },
+    "source": {
+      "name": "Code du Travail",
+      "article": "L3133-6",
+      "link": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006902936"
+    },
+    "sector": "BTP",
+    "version": "1.0",
+    "last_updated": "2024-05-15"
+  },
+  {
+    "id": "rule-btp-complementaryretirement-v1",
+    "description": "Complementary retirement deduction (placeholder).",
+    "condition": "employee.category === 'ouvrier' || employee.category === 'etam'",
+    "action": {
+      "type": "calculate_deduction",
+      "parameters": {
+        "rate": 0.035,
+        "base": "gross_salary_before_specific_deductions",
+        "deduction_name": "Retraite complémentaire Tranche 1"
+      }
+    },
+    "source": {
+      "name": "CCN BTP",
+      "article": "Titre IV",
+      "link": "https://www.legifrance.gouv.fr/conv_coll/id/KALICONT000005635222/"
+    },
+    "sector": "BTP",
+    "version": "1.0",
+    "last_updated": "2024-05-15"
+  },
+  {
+    "id": "rule-btp-unjustifiedabsence-v1",
+    "description": "Deduction for unjustified absences.",
+    "condition": "input.unjustified_absence_hours > 0",
+    "action": {
+      "type": "calculate_absence_deduction",
+      "parameters": {
+        "hours": "input.unjustified_absence_hours",
+        "hourly_rate_variable": "employee.hourly_rate",
+        "deduction_name": "Absence injustifiée"
+      }
+    },
+    "source": {
+      "name": "Code du Travail",
+      "article": "L1331-1",
+      "link": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006901133"
+    },
+    "sector": "BTP",
+    "version": "1.0",
+    "last_updated": "2024-05-15"
+  },
+  {
+    "id": "rule-btp-transportallowance-publictransport-v1",
+    "description": "Public transport cost reimbursement (50%).",
+    "condition": "input.public_transport_cost > 0",
+    "action": {
+      "type": "calculate_reimbursement",
+      "parameters": {
+        "percentage": 0.50,
+        "amount": "input.public_transport_cost",
+        "reimbursement_name": "Remboursement transport public (50%)"
+      }
+    },
+    "source": {
+      "name": "Code du Travail",
+      "article": "L3261-2",
+      "link": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000019875740"
+    },
+    "sector": "BTP",
+    "version": "1.0",
+    "last_updated": "2024-05-15"
+  },
+  {
+    "id": "rule-btp-dirtyworkpremium-v1",
+    "description": "Premium for unusually dirty work (prime de salissure).",
+    "condition": "input.dirty_work_days > 0",
+    "action": {
+      "type": "add_fixed_allowance",
+      "parameters": {
+        "amount_per_day": 5.00,
+        "units": "input.dirty_work_days",
+        "allowance_name": "Prime pour travaux insalubres ou salissants"
+      }
+    },
+    "source": {
+      "name": "CCN BTP",
+      "article": "Article 3.15 (Ouvriers)",
+      "link": "https://www.legifrance.gouv.fr/conv_coll/id/KALICONT000005635222/"
+    },
+    "sector": "BTP",
+    "version": "1.0",
+    "last_updated": "2024-05-15"
+  }
+]

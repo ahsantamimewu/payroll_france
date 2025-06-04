@@ -1,0 +1,79 @@
+[
+  {
+    "article_id": "L3121-28",
+    "source_name": "Code du Travail",
+    "title_fr": "Paiement des heures supplémentaires",
+    "summary_fr": "Cet article définit comment les heures supplémentaires doivent être payées. Il établit les taux de majoration pour les heures effectuées au-delà de la durée légale hebdomadaire de travail, sauf si un accord collectif prévoit des dispositions différentes plus favorables.",
+    "key_points_fr": [
+      "Les heures supplémentaires sont celles travaillées au-delà de 35 heures par semaine (ou durée équivalente fixée par accord).",
+      "Une majoration de salaire est obligatoire pour ces heures.",
+      "Le taux de majoration est généralement de 25% pour les 8 premières heures supplémentaires (de la 36ème à la 43ème heure).",
+      "Le taux de majoration est généralement de 50% pour les heures suivantes (au-delà de la 43ème heure).",
+      "Un accord d'entreprise ou de branche peut fixer des taux différents, mais avec un minimum de 10%."
+    ],
+    "common_pitfalls_fr": [
+      "Oublier de décompter les heures supplémentaires par semaine civile.",
+      "Appliquer un taux de majoration inférieur au minimum légal ou conventionnel.",
+      "Ne pas payer les heures supplémentaires mais les remplacer par un repos compensateur sans accord formel ou sans respecter les conditions."
+    ],
+    "keywords_fr": ["heures supplémentaires", "majoration salaire", "durée légale", "paiement", "taux majoration"],
+    "version": "1.0",
+    "last_reviewed": "2024-05-10"
+  },
+  {
+    "article_id": "CCN BTP Art. 8.18",
+    "source_name": "CCN BTP (Ouvriers)",
+    "title_fr": "Indemnité de repas (Panier repas)",
+    "summary_fr": "Cet article de la Convention Collective Nationale du BTP pour les Ouvriers traite de l'indemnité de repas, aussi appelée 'panier repas'. Elle est due aux ouvriers qui sont en déplacement sur les chantiers et ne peuvent pas rentrer chez eux ou au siège de l'entreprise pour déjeuner.",
+    "key_points_fr": [
+      "L'indemnité de repas est une compensation pour les frais de repas engagés par l'ouvrier en déplacement.",
+      "Elle est généralement due lorsque l'ouvrier ne peut pas prendre son repas à son domicile ou dans un restaurant d'entreprise.",
+      "Le montant de l'indemnité est forfaitaire et fixé par la convention collective (peut varier selon les régions via des accords spécifiques).",
+      "Elle n'est pas due si l'entreprise fournit le repas gratuitement ou rembourse les frais réels sur justificatif."
+    ],
+    "common_pitfalls_fr": [
+      "Ne pas verser l'indemnité alors que les conditions sont remplies.",
+      "Confondre l'indemnité de repas avec le remboursement des frais de restaurant sur note de frais, qui obéit à des règles différentes.",
+      "Appliquer un montant inférieur à celui prévu par la CCN applicable (nationale ou régionale)."
+    ],
+    "keywords_fr": ["panier repas", "indemnité de repas", "CCN BTP", "déplacement", "chantier", "ouvriers", "frais professionnels"],
+    "version": "1.0",
+    "last_reviewed": "2024-05-10"
+  },
+  {
+    "article_id": "L3133-6",
+    "source_name": "Code du Travail",
+    "title_fr": "Paiement du travail un jour férié",
+    "summary_fr": "Cet article concerne la rémunération des salariés qui travaillent un jour férié. En principe, le travail un jour férié donne droit à une majoration de salaire, en plus du salaire habituel, sauf pour le 1er mai qui a un régime spécifique (paiement double).",
+    "key_points_fr": [
+      "Le travail un jour férié (autre que le 1er mai) n'entraîne une majoration de salaire que si une convention collective ou un accord d'entreprise le prévoit.",
+      "Pour le 1er mai, si travaillé, le salarié a droit, en plus de son salaire habituel, à une indemnité égale au montant de ce salaire (paiement double).",
+      "Les autres jours fériés travaillés sont payés normalement, sauf dispositions conventionnelles plus favorables qui peuvent prévoir une majoration (par exemple, 100% en plus du salaire).",
+      "Si un jour férié est chômé (non travaillé), le salaire est maintenu sous conditions d'ancienneté (généralement 3 mois, sauf dispositions plus favorables)."
+    ],
+    "keywords_fr": ["jour férié", "travail jour férié", "1er mai", "majoration salaire", "rémunération", "chômage jour férié"],
+    "version": "1.0",
+    "last_reviewed": "2024-05-10"
+  },
+  {
+    "article_id": "CCN BTP Art. 8.11",
+    "source_name": "CCN BTP (Ouvriers)",
+    "title_fr": "Indemnité de petits déplacements (Trajet)",
+    "summary_fr": "Cet article de la CCN BTP Ouvriers définit les conditions d'attribution et les montants des indemnités de petits déplacements. Celles-ci visent à indemniser forfaitairement les frais et le temps de trajet quotidien des ouvriers entre leur domicile et les chantiers (ou le lieu de rattachement).",
+    "key_points_fr": [
+      "L'indemnité de trajet est due pour compenser la sujétion que représente le déplacement quotidien vers un lieu de travail non fixe.",
+      "Elle est calculée en fonction de zones concentriques établies à partir du siège de l'entreprise ou du lieu d'embauche.",
+      "Le montant varie selon la zone dans laquelle se situe le chantier.",
+      "Elle n'est pas due si l'ouvrier est transporté gratuitement par l'entreprise et que le temps de trajet n'excède pas le temps normal domicile-lieu d'embauche.",
+      "Cette indemnité est distincte de l'indemnité de grands déplacements (pour les chantiers éloignés empêchant le retour quotidien au domicile)."
+    ],
+    "common_pitfalls_fr": [
+      "Mal évaluer la zone du chantier et donc appliquer un montant incorrect.",
+      "Verser l'indemnité alors que l'ouvrier est logé sur place par l'entreprise (cas des grands déplacements).",
+      "Omettre de la verser pour les trajets entre le siège et un chantier éloigné, même si un véhicule d'entreprise est utilisé pour une partie du trajet."
+    ],
+    "keywords_fr": ["indemnité de trajet", "petits déplacements", "CCN BTP", "zones de déplacement", "frais de transport", "ouvriers"],
+    "version": "1.0",
+    "last_reviewed": "2024-05-10"
+  }
+]
